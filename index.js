@@ -20,7 +20,7 @@ module.exports = function stock(symbol) {
 
     var price = rtq[0].trim();
     var percent = rtq[1].replace(')', '');
-    var updated = $('#yfs_t53_nflx').text();
+    var updated = $('.time_rtq').text().trim();
     var prev = $('#table1').find('td').eq(0).text();
     var open = $('#table1').find('td').eq(1).text();
     var bid = $('#table1').find('td').eq(2).text();
