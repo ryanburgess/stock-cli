@@ -1,0 +1,36 @@
+{
+  "name": "stock-cli",
+  "version": "0.0.1",
+  "description": "A CLI tool to display stock",
+  "main": "bin/stock",
+  "preferGlobal": true,
+  "bin": {
+    "stock": "./bin/stock"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanburgess/stock-cli.git"
+  },
+  "keywords": [
+    "stock",
+    "money",
+    "tool",
+    "cli",
+    "finance"
+  ],
+  "author": "Ryan Burgess",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanburgess/stock-cli/issues"
+  },
+  "homepage": "https://github.com/ryanburgess/stock-cli#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "cli-table": "^0.3.1",
+    "colors": "^1.1.2",
+    "request": "^2.69.0"
+  }
+}
