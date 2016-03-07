@@ -7,6 +7,6 @@ switch (true) {
     stock(argument);
   break;
   default:
-    stock();
+    console.log('stock [symbol] - Display stock info');
   break;
 }
