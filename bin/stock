@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-var argument = process.argv[2];
-var stock = require('../index');
+'use strict';
+const argument = process.argv[2];
+const stock = require('../index');
 
 switch (true) {
   case (argument !== undefined):

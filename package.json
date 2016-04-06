@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "description": "A CLI tool to display stock",
   "main": "bin/stock",
+  "engines": {
+    "node": "4.4.2"
+  },
   "preferGlobal": true,
   "bin": {
     "stock": "./bin/stock"

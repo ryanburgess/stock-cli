@@ -1,29 +1,30 @@
-var cheerio = require('cheerio');
-var request = require('request');
-var Table = require('cli-table');
-var colors = require('colors');
+'use strict';
+const cheerio = require('cheerio');
+const request = require('request');
+const Table = require('cli-table');
+const colors = require('colors');
 
 module.exports = function stock(symbol) {
   
-  var url = 'http://finance.yahoo.com/q?s=' + symbol;
-  var table = new Table();
+  const url = 'http://finance.yahoo.com/q?s=' + symbol;
+  const table = new Table();
 
   request({
       method: 'GET',
       url: url
     }, function(err, response, body, callback) {
     if (err) return console.error(err);
-    $ = cheerio.load(body);
-    var stockNum = $('.time_rtq_ticker').text();
-    var title = $('#yfi_rt_quote_summary .title').text();
-    var rtq = $('#yfi_rt_quote_summary .time_rtq_content').text().trim();
+    const $ = cheerio.load(body);
+    const stockNum = $('.time_rtq_ticker').text();
+    const title = $('#yfi_rt_quote_summary .title').text();
+    const rtq = $('#yfi_rt_quote_summary .time_rtq_content').text().trim();
 
-    var price = rtq[0].trim();
-    var percent = rtq[1].replace(')', '');
-    var updated = $('.time_rtq').text().trim();
-    var prev = $('#table1').find('td').eq(0).text();
-    var open = $('#table1').find('td').eq(1).text();
-    var bid = $('#table1').find('td').eq(2).text();
+    const price = rtq[0].trim();
+    const percent = rtq[1].replace(')', '');
+    const updated = $('.time_rtq').text().trim();
+    const prev = $('#table1').find('td').eq(0).text();
+    const open = $('#table1').find('td').eq(1).text();
+    const bid = $('#table1').find('td').eq(2).text();
 
     table.push(
       { 'Prev close': prev },
